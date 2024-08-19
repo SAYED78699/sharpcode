@@ -74,7 +74,7 @@
 
   .button-container {
     display: inline-flex;
-    gap: 25px;
+    gap: 70px;
     margin-top: 20px;
   }
 
@@ -100,7 +100,7 @@ body {
     cursor: pointer;
     z-index: 2;
     margin-top: 20px;
-    margin-left: -20px;
+   
 }
 
 .play-button:hover {
