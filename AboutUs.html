@@ -3,12 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Real Madrid</title>
+    <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-    <div class="navbar">
-        <a href="index.html">Home</a>
-        <a href="AboutUs.html">About Us</a>
-    </div>
+
+   <div class="navbar">
+      <a href="index.html">Home</a>
+      <a href="AboutUs.html">About us</a>
+   </div>
+
+   <div class="video-container">
+      <video controls class="centered-video" autoplay muted loop playsinline>
+         <source src="assets/Images/madridistaa.mp4" type="video/mp4">
+      </video>
+   </div>
+
+   <div class="content">
+      <h1 class="welcome-text"><span style="color: blue;">Welcome to Los Blancos</span></h1>
+      <div class="button-container">
+         <button id="playVideoBtn" class="play-button">Watch Trailer</button>
+         <button id="clickbtn" class="play-button">Win a Ballon d'Or</button>
+      </div>
+   </div>
+
+   <!-- Game Section -->
+   <div id="game-section" style="display:none;">
+      <div class="game-container">
+         <h1>Footballer Stats Calculator</h1>
+         <div class="player-selection">
+            <label for="player-select">Choose a player:</label>
+            <select id="player-select">
+               <option value="Cristiano Ronaldo">Cristiano Ronaldo</option>
+               <option value="Lionel Messi">Lionel Messi</option>
+               <option value="Karim Benzema">Karim Benzema</option>
+               <option value="Robert Lewandowski">Robert Lewandowski</option>
+            </select>
+         </div>
+         <div class="input-container">
+            <label for="goals">Goals:</label>
+            <input type="number" id="goals" placeholder="Enter goals" min="0">
+         </div>
+         <div class="input-container">
+            <label for="assists">Assists:</label>
+            <input type="number" id="assists" placeholder="Enter assists" min="0">
+         </div>
+         <button onclick="calculateContribution()">Calculate Contribution</button>
+         <div class="result">
+            <p id="result-message"></p>
+         </div>
+      </div>
+   </div>
+
+   <script>
+      document.getElementById("playVideoBtn").addEventListener("click", function() {
+         var videoElement = document.querySelector(".centered-video");
+         if (videoElement.requestFullscreen) {
+            videoElement.requestFullscreen();
+         } else if (videoElement.mozRequestFullScreen) {
+            videoElement.mozRequestFullScreen();
+         } else if (videoElement.webkitRequestFullscreen) {
+            videoElement.webkitRequestFullscreen();
+         } else if (videoElement.msRequestFullscreen) {
+            videoElement.msRequestFullscreen();
+         }
+         videoElement.play();
+      });
+
+      document.getElementById("clickbtn").addEventListener("click", function() {
+         document.getElementById("game-section").style.display = "block";
+      });
+
+      function calculateContribution() {
+         const player = document.getElementById('player-select').value;
+         const goals = parseInt(document.getElementById('goals').value) || 0;
+         const assists = parseInt(document.getElementById('assists').value) || 0;
+
+         const totalContribution = goals + assists;
+         let message;
+
+         if (totalContribution > 30) {
+            message = `${player} had an excellent season with ${totalContribution} total contribution.`;
+         } else if (totalContribution > 20) {
+            message = `${player} had a good season with ${totalContribution} total contribution.`;
+         } else {
+            message = `${player} had an average season with ${totalContribution} total contribution.`;
+         }
+
+         document.getElementById('result-message').innerText = message;
+      }
+   </script>
+
 </body>
 </html>
