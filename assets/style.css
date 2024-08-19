@@ -20,16 +20,19 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    max-width: 100%;
-    max-height: 100%;
     z-index: 1;
-    box-shadow: none;
+    
 }
 
 .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 0;
+    z-index: 2;
 }
 
 .navbar a {
@@ -44,4 +47,16 @@
 
 .navbar a:hover {
     background-color: #0056b3; /* Hover effect */
+}
+
+.content {
+    padding: 20px;
+    background-color: #f8f8f8;
+    text-align: center;
+    margin-top: 100vh;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
 }
