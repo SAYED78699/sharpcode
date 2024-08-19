@@ -49,6 +49,7 @@
 .navbar a:hover {
     background-color: #0056b3;
 }
+
 /* Content section styling */
 .content {
     position: absolute;
@@ -60,6 +61,7 @@
     font-family: sans-serif;
     color: #0056b3;
 }
+
 .button-container {
     display: inline-flex;
     gap: 30px; /* Reduced spacing between buttons */
@@ -72,6 +74,7 @@
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
     margin-bottom: 5px; /* Minimal spacing below the welcome text */
 }
+
 .play-button, .click-button {
     background-color: #FF4500;
     color: white;
@@ -87,9 +90,23 @@
     background-color: #FF6347;
 }
 
+/* Adjust text styling */
+.text-container {
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+    padding: 20px; /* Padding inside the container */
+    border-radius: 10px; /* Rounded corners */
+    width: 80%; /* Adjust width as necessary */
+    margin: 20px auto 0 auto; /* Center the container */
+    text-align: center; /* Center the text */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a slight shadow for depth */
+    font-size: 18px; /* Larger font size */
+    color: #333; /* Darker text color for better contrast */
+    z-index: 2; /* Make sure it appears above the video */
+    position: relative; /* Relative position to align correctly with other elements */
+}
 /* Modal Styling */
 .modal {
-    display: none; 
+    display: none;
     position: fixed;
     z-index: 3;
     left: 0;
