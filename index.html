@@ -12,23 +12,24 @@
       <a href="index.html">Home</a>
       <a href="AboutUs.html">About us</a>
    </div>
-
-    <div video-container>
-       <!--<img src="assets/Images/madrid.jpg" alt="Real madrid players" height="500" width="1300" class="background-image"> -->
-    </div>
-    <div class="centered=video" >
+     
+   
+    <div class="video-container" >
       <video controls class="centered-video" autoplay muted loop playsinline>
        <source src="assets/Images/madridistaa.mp4" type="video/mp4">
       </video>
    </div>
 
    <div class="content">
-      <h1><span style="color: blue;">Welcome to Los Blancos</span></h1>
-      <button id="playVideBtn" class="play-button">Watch Trailer</button>
+      <h1 class="welcome-text"><span style="color: blue;">Welcome to Los Blancos</span></h1>
+      <div class="button container">
+      <button id="playVideoBtn" class="play-button">Watch Trailer</button>
+      <button id="clickbtn" class="play-button">Click</button>
+      </div>
    </div>
    
    <script>
-      document.getElementbyId("playVideoBtn").addEventListener("click", function()) {
+      document.getElementById("playVideoBtn").addEventListener("click", function() {
          var videoElement = document.querySelector(".centered-video");
          if (videoElement.requestFullscreen) {
             videoElement.requestFullscreen();
@@ -40,7 +41,7 @@
             videoElement.msRequestFullscreen();
          }
          videoElement.play();
-      }
+      });
    </script>
 
 </body>

@@ -24,6 +24,18 @@
     
 }
 
+.click-button {
+    background-color: #FF4500;
+    color: white;
+    padding: 15px 30px; /* Same padding as Watch Trailer */
+    font-size: 18px;    /* Same font size as Watch Trailer */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 2;
+    margin-top: 20px;
+}
+
 .navbar {
     position: fixed;
     top: 0;
@@ -50,20 +62,33 @@
 }
 
 .content {
-    padding: 20px;
-    background-color: #f8f8f8;
+    position: absolute;
+    top: 20%; /* Adjust this value to move the content up or down */
+    left: 50%; /* Adjust this value to move the content left or right */
+    transform: translate(-50%, 0); /* Keep the content centered horizontally */
     text-align: center;
-    margin-top: 100vh;
-}
+    z-index: 2;
+    font-family: sans-serif;
+    color: #0056b3;
+  }
+
+  .button-container {
+    display: inline-flex;
+    gap: 25px;
+    margin-top: 20px;
+  }
+
+  .welcome-text {
+    font-size: 36ps;
+    color:blue;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    margin-bottom: 20px
+  }
 
 body {
     margin: 0;
     font-family: Arial, sans-serif;
 }
-
-
-
-
 
 .play-button {
     background-color: #FF4500;
@@ -73,9 +98,12 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    z-index: 2;
     margin-top: 20px;
+    margin-left: -20px;
 }
 
 .play-button:hover {
     background-color: #FF6347
 }
+
