@@ -60,3 +60,22 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
 }
+
+
+
+
+
+.play-button {
+    background-color: #FF4500;
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.play-button:hover {
+    background-color: #FF6347
+}

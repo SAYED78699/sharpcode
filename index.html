@@ -10,7 +10,7 @@
 
    <div class="navbar">
       <a href="index.html">Home</a>
-      <a href="aboutUs.html">About us</a>
+      <a href="AboutUs.html">About us</a>
    </div>
 
     <div video-container>
@@ -23,7 +23,25 @@
    </div>
 
    <div class="content">
-      <h2>Welcome to  Los Blancos</h2>
+      <h1><span style="color: blue;">Welcome to Los Blancos</span></h1>
+      <button id="playVideBtn" class="play-button">Watch Trailer</button>
    </div>
+   
+   <script>
+      document.getElementbyId("playVideoBtn").addEventListener("click", function()) {
+         var videoElement = document.querySelector(".centered-video");
+         if (videoElement.requestFullscreen) {
+            videoElement.requestFullscreen();
+         } else if (videoElement.mozRequestFullScreen) {
+            videoElement.mozRequestFullScreen();
+         } else if (videoElement.webkitRequestFullscreen) {
+            videoElement.webkitRequestFullscreen();
+         } else if (videoElement.msRequestFullscreen) {
+            videoElement.msRequestFullscreen();
+         }
+         videoElement.play();
+      }
+   </script>
+
 </body>
 </html>
