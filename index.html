@@ -20,6 +20,7 @@
    </div>
 
    <div class="content">
+      <img src="assets/Images/logo.png" class="logo">
       <h1 class="welcome-text"><span style="color: blue;">Welcome to Los Blancos</span></h1>
       <div class="button-container">
          <button id="playVideoBtn" class="play-button">Watch Trailer</button>
@@ -33,22 +34,17 @@
          <span class="close">&times;</span>
          <div class="game-container">
             <h1>Footballer Stats Calculator</h1>
-            <div class="player-selection">
-               <label for="player-select">Choose a player:</label>
-               <select id="player-select">
-                  <option value="Cristiano Ronaldo">Cristiano Ronaldo</option>
-                  <option value="Lionel Messi">Lionel Messi</option>
-                  <option value="Karim Benzema">Karim Benzema</option>
-                  <option value="Robert Lewandowski">Robert Lewandowski</option>
-               </select>
+            <div class="input-container">
+               <label for="player-name">Enter your name:</label>
+               <input type="text" id="player-name" placeholder="Enter your name">
             </div>
             <div class="input-container">
-               <label for="goals">Goals:</label>
-               <input type="number" id="goals" placeholder="Enter goals" min="0">
+               <label for="goals">How many goals can you score in a year?</label>
+               <input type="number" id="goals" placeholder="Enter number of goals" min="0">
             </div>
             <div class="input-container">
-               <label for="assists">Assists:</label>
-               <input type="number" id="assists" placeholder="Enter assists" min="0">
+               <label for="assists">How many assists can you provide in a year?</label>
+               <input type="number" id="assists" placeholder="Enter number of assists" min="0">
             </div>
             <button id="calculateBtn">Calculate Contribution</button>
             <div class="result">
@@ -96,7 +92,7 @@
 
           // Calculate Contribution
           document.getElementById("calculateBtn").addEventListener("click", function() {
-              const player = document.getElementById('player-select').value;
+              const playerName = document.getElementById('player-name').value;
               const goals = parseInt(document.getElementById('goals').value) || 0;
               const assists = parseInt(document.getElementById('assists').value) || 0;
 
@@ -104,11 +100,11 @@
               let message;
 
               if (totalContribution > 30) {
-                  message = `${player} had an excellent season with ${totalContribution} total contribution.`;
+                  message = `${playerName}, you can definitely win a Ballon d'Or with a total contribution of ${totalContribution}!`;
               } else if (totalContribution > 20) {
-                  message = `${player} had a good season with ${totalContribution} total contribution.`;
+                  message = `${playerName}, you have a good chance of winning a Ballon d'Or with a total contribution of ${totalContribution}.`;
               } else {
-                  message = `${player} had an average season with ${totalContribution} total contribution.`;
+                  message = `${playerName}, keep practicing! You have a total contribution of ${totalContribution}.`;
               }
 
               document.getElementById('result-message').innerText = message;
