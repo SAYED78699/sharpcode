@@ -33,7 +33,7 @@
                and a commitment to excellence, the club has become synonymous with the pinnacle of football.
                From its iconic Santiago Bernabéu stadium to its passionate global fanbase, 
                Real Madrid continues to set the standard for greatness in the sport. </p>
-            <button id="moreInfoBtn" class="info-button">Find Out More</button>
+            <button id="moreInfoBtn" class="play-button">Find Out More</button>
         </div>
 
     </div>
@@ -62,7 +62,7 @@
         </div>
     </div>
 
-    <!-- Modal for the game -->
+    <!-- Modal for the existing Ballon d'Or game -->
     <div id="game-modal" class="modal">
         <div class="modal-content">
             <span id="close-game-modal" class="close">&times;</span>
@@ -121,21 +121,48 @@
             <img src="assets/Images/twitter.png" alt="Twitter">
             </a>
         </div>
-        <button class="learn-more-button">LEARN MORE</button>
+        <button id="losBlancosBtn" class="learn-more-button">Los Blancos Play Here</button>
+    </div>
+    
+    <div id="tactics-game-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-tactics-game-modal" class="close">&times;</span>
+            <div class="game-container">
+                <h1>Team Tactics Game</h1>
+                <div class="input-container">
+                    <label for="strategy">Choose your strategy:</label>
+                    <select id="strategy">
+                        <option value="offensive">Offensive</option>
+                        <option value="defensive">Defensive</option>
+                        <option value="balanced">Balanced</option>
+                    </select>
+                </div>
+                <div class="input-container">
+                    <label for="stamina">Player Stamina (1-100):</label>
+                    <input type="number" id="stamina" placeholder="Enter stamina" min="1" max="100">
+                </div>
+                <div class="input-container">
+                    <label for="skill">Player Skill (1-100):</label>
+                    <input type="number" id="skill" placeholder="Enter skill" min="1" max="100">
+                </div>
+                <div class="input-container">
+                    <label for="teamwork">Teamwork (1-100):</label>
+                    <input type="number" id="teamwork" placeholder="Enter teamwork" min="1" max="100">
+                </div>
+                <button id="playGameBtn">Play Game</button>
+                <div class="result">
+                    <p id="game-result-message"></p>
+                </div>
+            </div>
+        </div>
     </div>
 
-
-
-
     <div class="stats-container">
-       
-            <div class="the-video">
-                <video controls id="celebration" autoplay muted loop playsinline>
-                    <source src="assets/Images/video2.mp4">
-                </video>
-            </div>
-           
-        
+        <div class="the-video">
+            <video controls id="celebration" autoplay muted loop playsinline>
+                <source src="assets/Images/video2.mp4">
+            </video>
+        </div>
     </div>
 
     <script>
@@ -155,60 +182,61 @@
                 videoElement.play();
             });
 
-            // Handle game modal display
-            var gameModal = document.getElementById("game-modal");
-            var gameBtn = document.getElementById("clickbtn");
-            var gameClose = document.getElementById("close-game-modal");
+            // Function to handle modal opening and closing
+            function setupModal(modalId, openBtnId, closeBtnId) {
+                var modal = document.getElementById(modalId);
+                var openBtn = document.getElementById(openBtnId);
+                var closeBtn = document.getElementById(closeBtnId);
 
-            gameBtn.onclick = function() {
-                gameModal.style.display = "block";
-            }
-
-            gameClose.onclick = function() {
-                gameModal.style.display = "none";
-            }
-
-            // Handle info modal display
-            var infoModal = document.getElementById("info-modal");
-            var moreInfoBtn = document.getElementById("moreInfoBtn");
-            var closeInfo = document.getElementById("close-info-modal");
-
-            moreInfoBtn.onclick = function() {
-                infoModal.style.display = "block";
-            }
-
-            closeInfo.onclick = function() {
-                infoModal.style.display = "none";
-            }
-
-            // Close modals if clicking outside of them
-            window.onclick = function(event) {
-                if (event.target == gameModal) {
-                    gameModal.style.display = "none";
+                openBtn.onclick = function() {
+                    modal.style.display = "block";
                 }
-                if (event.target == infoModal) {
-                    infoModal.style.display = "none";
+
+                closeBtn.onclick = function() {
+                    modal.style.display = "none";
+                }
+
+                window.onclick = function(event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
                 }
             }
 
-            // Calculate Contribution
+            // Setup all modals
+            setupModal("game-modal", "clickbtn", "close-game-modal");
+            setupModal("info-modal", "moreInfoBtn", "close-info-modal");
+            setupModal("tactics-game-modal", "losBlancosBtn", "close-tactics-game-modal");
+
+            // Handle Ballon d'Or game calculations
             document.getElementById("calculateBtn").addEventListener("click", function() {
-                const playerName = document.getElementById('player-name').value;
-                const goals = parseInt(document.getElementById('goals').value) || 0;
-                const assists = parseInt(document.getElementById('assists').value) || 0;
+                var playerName = document.getElementById("player-name").value;
+                var goals = parseInt(document.getElementById("goals").value, 10);
+                var assists = parseInt(document.getElementById("assists").value, 10);
 
-                const totalContribution = goals + assists;
-                let message;
-
-                if (totalContribution > 30) {
-                    message = `${playerName}, you can definitely win a Ballon d'Or with a total contribution of ${totalContribution}!`;
-                } else if (totalContribution > 20) {
-                    message = `${playerName}, you have a good chance of winning a Ballon d'Or with a total contribution of ${totalContribution}.`;
+                if (isNaN(goals) || isNaN(assists)) {
+                    document.getElementById("result-message").textContent = "Please enter valid numbers for goals and assists.";
                 } else {
-                    message = `${playerName}, keep practicing! You have a total contribution of ${totalContribution}.`;
+                    var contribution = goals + assists;
+                    var resultMessage = playerName + ", you can definitely win a Ballon d'r with a total contribution of " + contribution + "!";
+                    document.getElementById("result-message").textContent = resultMessage;
                 }
+            });
 
-                document.getElementById('result-message').innerText = message;
+            // Handle tactics game calculations
+            document.getElementById("playGameBtn").addEventListener("click", function() {
+                var strategy = document.getElementById("strategy").value;
+                var stamina = parseInt(document.getElementById("stamina").value, 10);
+                var skill = parseInt(document.getElementById("skill").value, 10);
+                var teamwork = parseInt(document.getElementById("teamwork").value, 10);
+
+                if (isNaN(stamina) || isNaN(skill) || isNaN(teamwork)) {
+                    document.getElementById("game-result-message").textContent = "Please enter valid numbers for stamina, skill, and teamwork.";
+                } else {
+                    var successRate = Math.round((stamina + skill + teamwork) / 3);
+                    var gameResultMessage = "Using a " + strategy + " strategy, your success rate is " + successRate + "%!";
+                    document.getElementById("game-result-message").textContent = gameResultMessage;
+                }
             });
         });
     </script>
