@@ -8,201 +8,202 @@
 </head>
 <body>
 
-   <div class="navbar">
-      <a href="index.html">Home</a>
-      <a href="AboutUs.html">About us</a>
-   </div>
-
-   <div class="video-container">
-      <video controls class="centered-video" autoplay muted loop playsinline>
-         <source src="assets/Images/madridistaa.mp4" type="video/mp4">
-      </video>
-   </div>
-
-   <div class="content">
-      <img src="assets/Images/logo.png" class="logo">
-      <h1 class="welcome-text"><span style="color: blue;">Welcome to Los Blancos</span></h1>
-      <div class="button-container">
-         <button id="playVideoBtn" class="play-button">Watch Trailer</button>
-         <button id="clickbtn" class="play-button">Win a Ballon d'Or</button>
-      </div>
-
-      <div class="text-container">
-         <p>Real Madrid, one of the most prestigious football clubs in the world, has a rich history of success,
-           with 14 UEFA Champions League titles and 35 La Liga championships. Known for its world-class players 
-           and a commitment to excellence, the club has become synonymous with the pinnacle of football.
-           From its iconic Santiago Bernabéu stadium to its passionate global fanbase, 
-           Real Madrid continues to set the standard for greatness in the sport. </p>
-           <button id="moreInfoBtn" class="info-button">Find Out More</button>
-        </div>
-
-   </div>
-   
-   <div id="info-modal" class="modal">
-    <div class="modal-content">
-        <span id="close-info-modal" class="close">&times;</span>
-        <h2>Real Madrid Achievements</h2>
-        <p>Here are some of Real Madrid's most notable achievements:</p>
-        <table>
-            <tr>
-                <th>Competition</th>
-                <th>Titles</th>
-            </tr>
-            <tr>
-                <td>UEFA Champions League</td>
-                <td>14</td>
-            </tr>
-            <tr>
-                <td>La Liga</td>
-                <td>35</td>
-            </tr>
-            <!-- Add more rows as needed -->
-        </table>
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="AboutUs.html">About us</a>
     </div>
-</div>
 
-   <!-- Modal for the game -->
-   <div id="game-modal" class="modal">
-      <div class="modal-content">
-         <span id="close-game-modal" class="close">&times;</span>
-         <div class="game-container">
-            <h1>Footballer Stats Calculator</h1>
-            <div class="input-container">
-               <label for="player-name">Enter your name:</label>
-               <input type="text" id="player-name" placeholder="Enter your name">
-            </div>
-            <div class="input-container">
-               <label for="goals">How many goals can you score in a year?</label>
-               <input type="number" id="goals" placeholder="Enter number of goals" min="0">
-            </div>
-            <div class="input-container">
-               <label for="assists">How many assists can you provide in a year?</label>
-               <input type="number" id="assists" placeholder="Enter number of assists" min="0">
-            </div>
-            <button id="calculateBtn">Calculate Contribution</button>
-            <div class="result">
-               <p id="result-message"></p>
-            </div>
-         </div>
-      </div>
-   </div>
-
-   <div class="stats-container">
-    <div class="the-video">
-        <video controls id="celebration" autoplay muted loop playsinline>
-            <source src="assets/Images/video2.mp4">
+    <div class="video-container">
+        <video controls class="centered-video" autoplay muted loop playsinline>
+            <source src="assets/Images/madridistaa.mp4" type="video/mp4">
         </video>
     </div>
-     
 
+    <div class="content">
+        <img src="assets/Images/logo.png" class="logo">
+        <h1 class="welcome-text"><span style="color: blue;">Welcome to Los Blancos</span></h1>
+        <div class="button-container">
+            <button id="playVideoBtn" class="play-button">Watch Trailer</button>
+            <button id="clickbtn" class="play-button">Win a Ballon d'Or</button>
+        </div>
 
-   </div>
+        <div class="text-container">
+            <p>Real Madrid, one of the most prestigious football clubs in the world, has a rich history of success,
+               with 14 UEFA Champions League titles and 35 La Liga championships. Known for its world-class players 
+               and a commitment to excellence, the club has become synonymous with the pinnacle of football.
+               From its iconic Santiago Bernabéu stadium to its passionate global fanbase, 
+               Real Madrid continues to set the standard for greatness in the sport. </p>
+            <button id="moreInfoBtn" class="info-button">Find Out More</button>
+        </div>
 
-   <script>
-      document.addEventListener("DOMContentLoaded", function() {
-          // Handle video playback
-          document.getElementById("playVideoBtn").addEventListener("click", function() {
-              var videoElement = document.querySelector(".centered-video");
-              if (videoElement.requestFullscreen) {
-                  videoElement.requestFullscreen();
-              } else if (videoElement.mozRequestFullScreen) {
-                  videoElement.mozRequestFullScreen();
-              } else if (videoElement.webkitRequestFullscreen) {
-                  videoElement.webkitRequestFullscreen();
-              } else if (videoElement.msRequestFullscreen) {
-                  videoElement.msRequestFullscreen();
-              }
-              videoElement.play();
-          });
+    </div>
+   
+    <!-- Modal for Info -->
+    <div id="info-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-info-modal" class="close">&times;</span>
+            <h2>Real Madrid Achievements</h2>
+            <p>Here are some of Real Madrid's most notable achievements:</p>
+            <table>
+                <tr>
+                    <th>Competition</th>
+                    <th>Titles</th>
+                </tr>
+                <tr>
+                    <td>UEFA Champions League</td>
+                    <td>14</td>
+                </tr>
+                <tr>
+                    <td>La Liga</td>
+                    <td>35</td>
+                </tr>
+                <!-- Add more rows as needed -->
+            </table>
+        </div>
+    </div>
 
-          // Handle game modal display
-          var gameModal = document.getElementById("game-modal");
-          var gameBtn = document.getElementById("clickbtn");
-          var gameClose = document.getElementById("close-game-modal");
+    <!-- Modal for the game -->
+    <div id="game-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-game-modal" class="close">&times;</span>
+            <div class="game-container">
+                <h1>Footballer Stats Calculator</h1>
+                <div class="input-container">
+                    <label for="player-name">Enter your name:</label>
+                    <input type="text" id="player-name" placeholder="Enter your name">
+                </div>
+                <div class="input-container">
+                    <label for="goals">How many goals can you score in a year?</label>
+                    <input type="number" id="goals" placeholder="Enter number of goals" min="0">
+                </div>
+                <div class="input-container">
+                    <label for="assists">How many assists can you provide in a year?</label>
+                    <input type="number" id="assists" placeholder="Enter number of assists" min="0">
+                </div>
+                <button id="calculateBtn">Calculate Contribution</button>
+                <div class="result">
+                    <p id="result-message"></p>
+                </div>
+            </div>
+        </div>
+    </div>
 
-          gameBtn.onclick = function() {
-              gameModal.style.display = "block";
-          }
-
-          gameClose.onclick = function() {
-              gameModal.style.display = "none";
-          }
-
-          // Handle info modal display
-          var infoModal = document.getElementById("info-modal");
-          var moreInfoBtn = document.getElementById("moreInfoBtn");
-          var closeInfo = document.getElementById("close-info-modal");
-
-          moreInfoBtn.onclick = function() {
-              infoModal.style.display = "block";
-          }
-
-          closeInfo.onclick = function() {
-              infoModal.style.display = "none";
-          }
-
-          // Close modal if clicking outside of it
-          window.onclick = function(event) {
-              if (event.target == gameModal) {
-                  gameModal.style.display = "none";
-              }
-              if (event.target == infoModal) {
-                  infoModal.style.display = "none";
-              }
-          }
-
-          // Calculate Contribution
-          document.getElementById("calculateBtn").addEventListener("click", function() {
-              const playerName = document.getElementById('player-name').value;
-              const goals = parseInt(document.getElementById('goals').value) || 0;
-              const assists = parseInt(document.getElementById('assists').value) || 0;
-
-              const totalContribution = goals + assists;
-              let message;
-
-              if (totalContribution > 30) {
-                  message = `${playerName}, you can definitely win a Ballon d'Or with a total contribution of ${totalContribution}!`;
-              } else if (totalContribution > 20) {
-                  message = `${playerName}, you have a good chance of winning a Ballon d'Or with a total contribution of ${totalContribution}.`;
-              } else {
-                  message = `${playerName}, keep practicing! You have a total contribution of ${totalContribution}.`;
-              }
-
-              document.getElementById('result-message').innerText = message;
-          });
-      });
-
-
-      document.addEventListener("DOMContentLoaded", function() {
-    // Existing code for game modal...
-
-    // Handle info modal display
-    var infoModal = document.getElementById("info-modal");
-    var moreInfoBtn = document.getElementById("moreInfoBtn");
-    var closeInfo = infoModal.getElementsByClassName("close")[0];
-
-    moreInfoBtn.onclick = function() {
-        infoModal.style.display = "block";
-    }
-
-    closeInfo.onclick = function() {
-        infoModal.style.display = "none";
-    }
-
-    window.onclick = function(event) {
-        if (event.target == infoModal) {
-            infoModal.style.display = "none";
-        }
-    }
-});
+    <div class="real-madrid-section">
+        <div class="real-madrid-header">
+            <h1>REAL MADRID</h1>
+            <h2>UNRIVALLED FOOTBALL MANAGEMENT</h2>
+        </div>
+        <div class="real-madrid-content">
+            <p>
+                At Real Madrid, it's not just about winning; it's about the relentless pursuit of excellence and creating a legacy. 
+                Whether signing the world's best players or crafting innovative strategies, every decision is made with a single goal in mind: 
+                to be the best football club in history.
+            </p>
+            <p>
+                So with Real Madrid, don’t just dream—make history. Lead the team to victory, build on each success, and continue the legacy 
+                of the most successful football club in the world. Because for Real Madrid, progress is the only option.
+            </p>
+        </div>
+        <div class="real-madrid-platforms">
+            <img src="steam-icon.png" alt="Steam">
+            <img src="epic-games-icon.png" alt="Epic Games">
+            <img src="game-pass-icon.png" alt="Game Pass">
+            <img src="playstation-icon.png" alt="PlayStation">
+            <img src="xbox-icon.png" alt="Xbox">
+            <img src="switch-icon.png" alt="Switch">
+            <img src="netflix-icon.png" alt="Netflix">
+        </div>
+        <button class="learn-more-button">LEARN MORE</button>
+    </div>
 
 
 
 
+    <div class="stats-container">
+       
+            <div class="the-video">
+                <video controls id="celebration" autoplay muted loop playsinline>
+                    <source src="assets/Images/video2.mp4">
+                </video>
+            </div>
+           
+        
+    </div>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Handle video playback
+            document.getElementById("playVideoBtn").addEventListener("click", function() {
+                var videoElement = document.querySelector(".centered-video");
+                if (videoElement.requestFullscreen) {
+                    videoElement.requestFullscreen();
+                } else if (videoElement.mozRequestFullScreen) {
+                    videoElement.mozRequestFullScreen();
+                } else if (videoElement.webkitRequestFullscreen) {
+                    videoElement.webkitRequestFullscreen();
+                } else if (videoElement.msRequestFullscreen) {
+                    videoElement.msRequestFullscreen();
+                }
+                videoElement.play();
+            });
 
+            // Handle game modal display
+            var gameModal = document.getElementById("game-modal");
+            var gameBtn = document.getElementById("clickbtn");
+            var gameClose = document.getElementById("close-game-modal");
 
-   </script>
+            gameBtn.onclick = function() {
+                gameModal.style.display = "block";
+            }
+
+            gameClose.onclick = function() {
+                gameModal.style.display = "none";
+            }
+
+            // Handle info modal display
+            var infoModal = document.getElementById("info-modal");
+            var moreInfoBtn = document.getElementById("moreInfoBtn");
+            var closeInfo = document.getElementById("close-info-modal");
+
+            moreInfoBtn.onclick = function() {
+                infoModal.style.display = "block";
+            }
+
+            closeInfo.onclick = function() {
+                infoModal.style.display = "none";
+            }
+
+            // Close modals if clicking outside of them
+            window.onclick = function(event) {
+                if (event.target == gameModal) {
+                    gameModal.style.display = "none";
+                }
+                if (event.target == infoModal) {
+                    infoModal.style.display = "none";
+                }
+            }
+
+            // Calculate Contribution
+            document.getElementById("calculateBtn").addEventListener("click", function() {
+                const playerName = document.getElementById('player-name').value;
+                const goals = parseInt(document.getElementById('goals').value) || 0;
+                const assists = parseInt(document.getElementById('assists').value) || 0;
+
+                const totalContribution = goals + assists;
+                let message;
+
+                if (totalContribution > 30) {
+                    message = `${playerName}, you can definitely win a Ballon d'Or with a total contribution of ${totalContribution}!`;
+                } else if (totalContribution > 20) {
+                    message = `${playerName}, you have a good chance of winning a Ballon d'Or with a total contribution of ${totalContribution}.`;
+                } else {
+                    message = `${playerName}, keep practicing! You have a total contribution of ${totalContribution}.`;
+                }
+
+                document.getElementById('result-message').innerText = message;
+            });
+        });
+    </script>
 
 </body>
 </html>

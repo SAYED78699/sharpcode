@@ -41,13 +41,13 @@
     padding: 10px 20px;
     text-decoration: none;
     color: white;
-    background-color: #007BFF;
+    background-color: purple; /* Ensures both buttons have the same blue color */
     border-radius: 5px;
     font-size: 16px;
 }
 
 .navbar a:hover {
-    background-color: #0056b3;
+    background-color: purple;
 }
 
 /* Content section styling */
@@ -295,4 +295,67 @@ th {
 
 td {
     background-color: #ffffff;
+}
+
+
+
+/* The video section styling */
+.the-video {
+    width: 60%; /* Video takes up 60% of the width */
+}
+
+.the-video video {
+    width: 100%; /* Ensure the video takes full width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.real-madrid-section {
+    background-color: #2e004d;
+    padding: 50px;
+    text-align: center;
+    color: white;
+}
+
+.real-madrid-header h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+.real-madrid-header h2 {
+    font-size: 1.5em;
+    margin-top: 10px;
+    color: #f5b041;
+}
+
+.real-madrid-content p {
+    font-size: 1.2em;
+    margin: 20px 0;
+}
+
+.real-madrid-platforms {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.real-madrid-platforms img {
+    height: 50px;
+    width: 50px;
+}
+
+.learn-more-button {
+    background-color: #f5b041;
+    color: #2e004d;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    cursor: pointer;
+    margin-top: 30px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.learn-more-button:hover {
+    background-color: #d48b2b;
 }
