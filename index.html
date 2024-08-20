@@ -27,21 +27,44 @@
          <button id="clickbtn" class="play-button">Win a Ballon d'Or</button>
       </div>
 
-      <!-- Moved the text inside the content section -->
       <div class="text-container">
          <p>Real Madrid, one of the most prestigious football clubs in the world, has a rich history of success,
            with 14 UEFA Champions League titles and 35 La Liga championships. Known for its world-class players 
            and a commitment to excellence, the club has become synonymous with the pinnacle of football.
            From its iconic Santiago Bernabéu stadium to its passionate global fanbase, 
            Real Madrid continues to set the standard for greatness in the sport. </p>
-      </div>
+           <button id="moreInfoBtn" class="info-button">Find Out More</button>
+        </div>
 
    </div>
+   
+   <div id="info-modal" class="modal">
+    <div class="modal-content">
+        <span id="close-info-modal" class="close">&times;</span>
+        <h2>Real Madrid Achievements</h2>
+        <p>Here are some of Real Madrid's most notable achievements:</p>
+        <table>
+            <tr>
+                <th>Competition</th>
+                <th>Titles</th>
+            </tr>
+            <tr>
+                <td>UEFA Champions League</td>
+                <td>14</td>
+            </tr>
+            <tr>
+                <td>La Liga</td>
+                <td>35</td>
+            </tr>
+            <!-- Add more rows as needed -->
+        </table>
+    </div>
+</div>
 
    <!-- Modal for the game -->
    <div id="game-modal" class="modal">
       <div class="modal-content">
-         <span class="close">&times;</span>
+         <span id="close-game-modal" class="close">&times;</span>
          <div class="game-container">
             <h1>Footballer Stats Calculator</h1>
             <div class="input-container">
@@ -81,22 +104,39 @@
               videoElement.play();
           });
 
-          // Handle modal display
-          var modal = document.getElementById("game-modal");
-          var btn = document.getElementById("clickbtn");
-          var span = document.getElementsByClassName("close")[0];
+          // Handle game modal display
+          var gameModal = document.getElementById("game-modal");
+          var gameBtn = document.getElementById("clickbtn");
+          var gameClose = document.getElementById("close-game-modal");
 
-          btn.onclick = function() {
-              modal.style.display = "block";
+          gameBtn.onclick = function() {
+              gameModal.style.display = "block";
           }
 
-          span.onclick = function() {
-              modal.style.display = "none";
+          gameClose.onclick = function() {
+              gameModal.style.display = "none";
           }
 
+          // Handle info modal display
+          var infoModal = document.getElementById("info-modal");
+          var moreInfoBtn = document.getElementById("moreInfoBtn");
+          var closeInfo = document.getElementById("close-info-modal");
+
+          moreInfoBtn.onclick = function() {
+              infoModal.style.display = "block";
+          }
+
+          closeInfo.onclick = function() {
+              infoModal.style.display = "none";
+          }
+
+          // Close modal if clicking outside of it
           window.onclick = function(event) {
-              if (event.target == modal) {
-                  modal.style.display = "none";
+              if (event.target == gameModal) {
+                  gameModal.style.display = "none";
+              }
+              if (event.target == infoModal) {
+                  infoModal.style.display = "none";
               }
           }
 
@@ -120,6 +160,37 @@
               document.getElementById('result-message').innerText = message;
           });
       });
+
+
+      document.addEventListener("DOMContentLoaded", function() {
+    // Existing code for game modal...
+
+    // Handle info modal display
+    var infoModal = document.getElementById("info-modal");
+    var moreInfoBtn = document.getElementById("moreInfoBtn");
+    var closeInfo = infoModal.getElementsByClassName("close")[0];
+
+    moreInfoBtn.onclick = function() {
+        infoModal.style.display = "block";
+    }
+
+    closeInfo.onclick = function() {
+        infoModal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == infoModal) {
+            infoModal.style.display = "none";
+        }
+    }
+});
+
+
+
+
+
+
+
    </script>
 
 </body>
