@@ -311,3 +311,41 @@ td {
 .modal {
     z-index: 3; /* Ensure modal is on top of all elements */
 }
+.stats-container {
+    position: relative;
+}
+
+/* Styling for the match scores section */
+.match-scores {
+    position: absolute;
+    top: 20px; /* Adjust the vertical position */
+    left: 20px; /* Adjust the horizontal position */
+    width: 200px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.8); /* Slight transparency */
+    color: black;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    font-size: 14px;
+    z-index: 2;
+}
+
+.match-scores h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.match-scores table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.match-scores td {
+    padding: 5px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.match-scores tr:last-child td {
+    border-bottom: none;
+}
