@@ -17,6 +17,8 @@
           <h1>About Real Madrid</h1>
           <p>Real Madrid Club de Fútbol, commonly referred to as Real Madrid, is a professional football club based in Madrid, Spain. Founded on 6 March 1902, the club has traditionally worn a white home kit since inception.</p>
           <p>Real Madrid is one of the most widely supported teams internationally. The club has won numerous trophies, including the record number of European Cup/UEFA Champions League titles and La Liga titles.</p>
+         <p>Sign up NOW!</p>
+         <button id="openSignup">Sign Up</button>
           <h2>Achievements</h2>
           <table class="achievements-table">
               <thead>
@@ -57,10 +59,40 @@
              <button class="weather-button" data-weather="Sunny">Sunny</button>
              <button class="weather-button" data-weather="Rainy">Rainy</button>
          </div>
+         
      </section>
-  
+     
+    
+
+     <!-- Signup Modal -->
+     <div id="signupModal" class="modal">
+         <div class="modal-content">
+             <span class="close">&times;</span>
+             <h2>Sign Up to be a Real Madrid Player</h2>
+             <form id="signup-form">
+                 <label for="name">Name:</label>
+                 <input type="text" id="name" name="name" required><br><br>
+
+                 <label for="age">Age:</label>
+                 <input type="number" id="age" name="age" required><br><br>
+
+                 <label for="position">Position:</label>
+                 <input type="text" id="position" name="position" required><br><br>
+
+                 <label for="stamina">Stamina:</label>
+                 <input type="number" id="stamina" name="stamina" required><br><br>
+
+                 <label for="picture">Upload Picture:</label>
+                 <input type="file" id="picture" name="picture" accept="image/*" required><br><br>
+
+                 <input type="submit" value="Submit">
+             </form>
+         </div>
+     </div>
    
-   
+     
+     
+    </main>
 
    
 
@@ -163,7 +195,31 @@
         });
     });
 });
-</script>
+
+
+        // Get modal elements
+        const modal = document.getElementById("signupModal");
+        const openModalBtn = document.getElementById("openSignup");
+        const closeModalBtn = document.getElementsByClassName("close")[0];
+
+        openModalBtn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        closeModalBtn.onclick = function() {
+            modal.style.display = "none";
+        }
+
+       
+        window.onclick = function(event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        }
+   
+
+
+
 </script>
    
    
