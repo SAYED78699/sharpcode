@@ -12,7 +12,54 @@
       <a href="index.html">Home</a>
       <a href="AboutUs.html">About us</a>
    </div>
+   <main>
+      <section class="about-real-madrid">
+          <h1>About Real Madrid</h1>
+          <p>Real Madrid Club de Fútbol, commonly referred to as Real Madrid, is a professional football club based in Madrid, Spain. Founded on 6 March 1902, the club has traditionally worn a white home kit since inception.</p>
+          <p>Real Madrid is one of the most widely supported teams internationally. The club has won numerous trophies, including the record number of European Cup/UEFA Champions League titles and La Liga titles.</p>
+          <h2>Achievements</h2>
+          <table class="achievements-table">
+              <thead>
+                  <tr>
+                      <th>Competition</th>
+                      <th>Titles Won</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                      <td>La Liga</td>
+                      <td>35</td>
+                  </tr>
+                  <tr>
+                      <td>UEFA Champions League</td>
+                      <td>14</td>
+                  </tr>
+                  <tr>
+                      <td>Copa del Rey</td>
+                      <td>19</td>
+                  </tr>
+                  <tr>
+                      <td>FIFA Club World Cup</td>
+                      <td>5</td>
+                  </tr>
+              </tbody>
+          </table>
+      </section>
 
+      <!-- Game Section -->
+      <section class="game-section">
+         <h2>Football Stadium Weather Quiz</h2>
+         <p>Guess the weather at the football stadium based on the given clues!</p>
+         <button id="start-game">Start Game</button>
+         <p id="game-result"></p>
+         <div id="weather-container" style="display: none;">
+             <p id="weather-clue"></p>
+             <button class="weather-button" data-weather="Sunny">Sunny</button>
+             <button class="weather-button" data-weather="Rainy">Rainy</button>
+         </div>
+     </section>
+  
+   
    
 
    
@@ -23,11 +70,10 @@
       <div class="footer-container">
           <div class="footer-section about">
               <h3>Address</h3>
-              <p>22 Whitten Avenue
-                  East
-                  Central Lodnon
-                  w1 7nb
-              </p>
+              <p>22 Whitten Avenue</p>
+               <p>Central Lodnon</p>
+                 <p>w1 7nb</p>
+              
           </div>
           <div class="footer-section links">
               <h3>Quick Links</h3>
@@ -60,9 +106,65 @@
           <p>&copy; 2024 Your Company. All rights reserved.</p>
       </div>
   </footer>
+   
+  <script>
+ document.addEventListener('DOMContentLoaded', function () {
+    const weatherClues = [
+        { clue: "The pitch is dry and bright. What is the weather?", weather: "Sunny" },
+        { clue: "The players are wearing raincoats and the ground is muddy. What is the weather?", weather: "Rainy" },
+        { clue: "The sun is shining and there's no cloud in the sky. What is the weather?", weather: "Sunny" },
+        { clue: "Umbrellas are out and there are puddles on the field. What is the weather?", weather: "Rainy" }
+    ];
 
+    let currentClueIndex = 0;
+    let score = 0;
+    const startButton = document.getElementById('start-game');
+    const resultDisplay = document.getElementById('game-result');
+    const weatherContainer = document.getElementById('weather-container');
+    const weatherClueElement = document.getElementById('weather-clue');
+    const weatherButtons = document.querySelectorAll('.weather-button');
 
+    startButton.addEventListener('click', function () {
+        startButton.style.display = 'none';
+        weatherContainer.style.display = 'block';
+        currentClueIndex = 0;
+        score = 0;
+        resultDisplay.textContent = "";
+        showNextClue();
+    });
 
+    function showNextClue() {
+        if (currentClueIndex < weatherClues.length) {
+            const clue = weatherClues[currentClueIndex];
+            weatherClueElement.textContent = clue.clue;
+        } else {
+            endGame();
+        }
+    }
+
+    function endGame() {
+        weatherContainer.style.display = 'none';
+        startButton.style.display = 'block';
+        resultDisplay.textContent = `Game Over! You scored ${score} points.`;
+        startButton.textContent = "Play Again";
+    }
+
+    weatherButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const selectedWeather = this.getAttribute('data-weather');
+            const correctWeather = weatherClues[currentClueIndex].weather;
+
+            if (selectedWeather === correctWeather) {
+                score++;
+            }
+
+            currentClueIndex++;
+            showNextClue();
+        });
+    });
+});
+</script>
+</script>
    
    
 

@@ -24,6 +24,120 @@
     background-color: purple;
 }
 
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    margin: 60px auto;
+    padding: 20px;
+    background-color: rgb(229, 83, 229);
+}
+
+header {
+    background-color: #282828;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+h1, h2 {
+    color: #282828;
+}
+
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-real-madrid {
+    margin-bottom: 40px;
+}
+
+.achievements-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.achievements-table th, .achievements-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.achievements-table th {
+    background-color: #282828;
+    color: white;
+}
+
+.achievements-table tbody tr {
+    background-color: #f2f2f2;
+}
+
+/* Game Section Styles */
+.game-section {
+    margin-top: 40px;
+    text-align: center;
+}
+
+#start-game {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #282828;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#start-game:hover {
+    background-color: #f39c12;
+}
+
+.weather-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #282828;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.weather-button:hover {
+    background-color: #f39c12;
+}
+
+#game-result {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
+}
+
+.game-section p {
+    font-size: 18px;
+    color: #333;
+}
+
+
+
 
 
 footer {
@@ -31,6 +145,10 @@ footer {
     color: purple;
     padding: 40px 0;
     font-family: 'Arial', sans-serif;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    clear: both;
 }
 
 .footer-container {
