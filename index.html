@@ -150,7 +150,7 @@
     </div>
 
     <div style="background-color: purple;" class="stats-container">
-        <!-- New match scores section -->
+    
         <div class="match-scores">
             <h2>Recent Matches</h2>
             <table>
@@ -192,14 +192,14 @@
             </table>
         </div>
     
-        <!-- The video in the middle -->
+       
         <div class="the-video">
             <video controls id="celebration" autoplay muted loop playsinline>
                 <source src="assets/Images/video2.mp4">
             </video>
         </div>
     
-        <!-- Ronaldo image on the right -->
+      
         <div class="madrid">
             <img src="assets/Images/ronaldo2.jpeg" alt="ronaldo">
         </div>
@@ -249,7 +249,7 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            // Handle video playback
+       
             document.getElementById("playVideoBtn").addEventListener("click", function() {
                 var videoElement = document.querySelector(".centered-video");
                 if (videoElement.requestFullscreen) {
@@ -264,7 +264,7 @@
                 videoElement.play();
             });
 
-            // Function to handle modal opening and closing
+      
             function setupModal(modalId, openBtnId, closeBtnId) {
                 var modal = document.getElementById(modalId);
                 var openBtn = document.getElementById(openBtnId);
@@ -285,12 +285,12 @@
                 }
             }
 
-            // Setup all modals
+         
             setupModal("game-modal", "clickbtn", "close-game-modal");
             setupModal("info-modal", "moreInfoBtn", "close-info-modal");
             setupModal("tactics-game-modal", "losBlancosBtn", "close-tactics-game-modal");
 
-            // Handle Ballon d'Or game calculations
+     
             document.getElementById("calculateBtn").addEventListener("click", function() {
                 var playerName = document.getElementById("player-name").value;
                 var goals = parseInt(document.getElementById("goals").value, 10);
@@ -305,7 +305,7 @@
                 }
             });
 
-            // Handle tactics game calculations
+           
             document.getElementById("playGameBtn").addEventListener("click", function() {
                 var strategy = document.getElementById("strategy").value;
                 var stamina = parseInt(document.getElementById("stamina").value, 10);
