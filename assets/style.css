@@ -298,13 +298,16 @@ td {
 
 /* Specific styling for .the-video section */
 .the-video {
-    width: 60%; /* Video takes up 60% of the width */
-    margin: 0 auto;
+    flex-grow: 3; /* Allow the video to take more space */
+    margin: 0 10px;
+    display: flex;
+    justify-content: center;
 }
 
 .the-video video {
-    width: 100%; /* Ensure the video takes full width */
-    height: auto; /* Maintain aspect ratio */
+    width: 90%; /* Ensure the video takes full width */
+    height: auto;
+    max-width: 900px; /* Maintain aspect ratio */
 }
 
 /* Reset overlapping modal styles */
@@ -313,15 +316,17 @@ td {
 }
 .stats-container {
     position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: purple;
 }
 
 /* Styling for the match scores section */
 .match-scores {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    width: 200px;
-    height: 400px; /* Adjust this value to your desired height */
+    width: 170px; /* Adjust this value to your desired height */
     padding: 10px;
     background-color: rgba(255, 255, 255, 0.8); /* Slight transparency */
     color: black;
@@ -332,21 +337,30 @@ td {
 }
 
 .match-scores h2 {
-    font-size: 18px;
+    font-size: 16px;
     margin-bottom: 10px;
+    
 }
 
 .match-scores table {
     width: 100%;
     border-collapse: collapse;
+    
 }
 
 .match-scores td {
-    padding: 5px;
+    padding: 6px;
     text-align: center;
-    border-bottom: 1px solid #ddd;
+    
+   
 }
 
 .match-scores tr:last-child td {
     border-bottom: none;
+}
+
+.madrid img {
+    width: 300px;
+    height: auto;
+    margin-left: cover; /* Space between the video and Ronaldo image */
 }
